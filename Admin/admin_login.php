@@ -84,15 +84,13 @@
 
 <?php
 // Handle form submission and validation
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Connect to your MySQL database
-    $servername = "localhost";
-    $username_db = "root";
-    $password_db = "";
-    $dbname = "df";
+ $servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "df";
+$port = 3307;
 
-    // Create connection
-    $conn = new mysqli($servername, $username_db, $password_db, $dbname);
+$conn = new mysqli($servername, $username, $password, $dbname, $port);
 
     // Check connection
     if ($conn->connect_error) {
@@ -120,5 +118,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Close the statement and connection
     $stmt->close();
     $conn->close();
-}
+
 ?>
